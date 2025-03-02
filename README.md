@@ -4,8 +4,11 @@ GuideAI is an AI-based travel assistant that helps users find locations, plan tr
 
 ## Features
 ✅ Live Location Tracking – Get real-time location updates.
+
 ✅ Trip Planning – AI-powered itinerary suggestions.
+
 ✅ Navigation Assistance – Find the best routes and directions.
+
 ✅ Activity Recommendations – Discover places to visit and things to do.
 
 ## Tech Stack
@@ -37,16 +40,20 @@ Open http://127.0.0.1:5000/ in your browser.
 
 ## Screenshots:
 1. Using IBM Login Page
+
 ![Project Screenshot](Screenshots/Login.png)
 
 2. Multilingual Support
+
 ![Project Screenshot](Screenshots/Multilingual.png)
 ![Project Screenshot](Screenshots/Multilingual2.png)
 
-4. Using image to get information
-![Project Screenshot](Screenshots/ImageUpload.png)
+3. Using image to get information
 
-5. Trip Planning
+![Project Screenshot](Screenshots/UploadImage.png)
+
+4. Trip Planning
+
 ![Project Screenshot](Screenshots/TripPlanning.png)
 
 ## Usage
