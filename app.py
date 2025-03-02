@@ -26,13 +26,13 @@ app.secret_key = os.getenv("SECRET_KEY")
 
 # IBM App ID credentials from environment variables
 CLIENT_ID = os.getenv("CLIENT_ID")
+tts_API_KEY = os.getenv("tts_API_KEY")
 CLIENT_SECRET = os.getenv("CLIENT_SECRET")
+SERVICE_URL_TEXT_TO_SPEECH = os.getenv("SERVICE_URL_TEXT_TO_SPEECH")
 OAUTH_SERVER_URL = os.getenv("OAUTH_SERVER_URL")
 REDIRECT_URI = os.getenv("REDIRECT_URI")
 
 # IBM Watson Text-to-Speech setup
-tts_API_KEY = 'P7Dn9UBTTAfN8PP0VqFSZHzFYqIoyd_ogdaGjPUXXh_W'
-SERVICE_URL_TEXT_TO_SPEECH = 'https://api.au-syd.text-to-speech.watson.cloud.ibm.com/instances/d6fc4858-565f-4c83-bc8d-05fc279d2ac9'
 authenticator_text_to_speech = IAMAuthenticator(tts_API_KEY)
 text_to_speech = TextToSpeechV1(authenticator=authenticator_text_to_speech)
 text_to_speech.set_service_url(SERVICE_URL_TEXT_TO_SPEECH)
