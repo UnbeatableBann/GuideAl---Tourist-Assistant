@@ -13,15 +13,18 @@ from ibm_watson.natural_language_understanding_v1 import (
     KeywordsOptions,
 )
 
-service_url = "https://api.au-syd.natural-language-understanding.watson.cloud.ibm.com/instances/59a06cdd-c88a-41b7-89da-7d023a38429a"
+Authenticator = os.getenv("Authenticator")
+service_url = os.getenv("service_url")
+
+service_url = service_url
 authenticator = IAMAuthenticator(
-    "HZ23cQEFij1oYhodDYhViIzyexLMiRvAqBrnXl7gkAUg")
+    Authenticator)
 nlu = NaturalLanguageUnderstandingV1(
     version="2022-04-07", authenticator=authenticator)
 nlu.set_service_url(service_url)
 
-gemini_key = "AIzaSyCBqyD8j_HspxNryOM1Qqeu-hoAjNfgdMo"
-google_api_key = "AIzaSyBOoDCqCkmhXLzqGkXNzXir0oA1ullGG0w"
+gemini_key = os.getenv("gemini_key")
+google_api_key = os.getenv("google_api_key")
 
 genai.configure(api_key=gemini_key)
 
@@ -67,103 +70,17 @@ def fallback_response():
 def match_entity_with_google_places(entity):
     try:
         # Prompt engineering for intent detection
-        prompt = f"""
+        prompt = f'''
         The entity is: "{entity}".
         Match the entity with any of the given google places keys(just give one key as answer):
-        "accounting",
-    "airport",
-    "amusement_park",
-    "aquarium",
-    "art_gallery",
-    "atm",
-    "bakery",
-    "bank",
-    "bar",
-    "beauty_salon",
-    "bicycle_store",
-    "book_store",
-    "bowling_alley",
-    "bus_station",
-    "cafe",
-    "campground",
-    "car_dealer",
-    "car_rental",
-    "car_repair",
-    "car_wash",
-    "casino",
-    "cemetery",
-    "church",
-    "city_hall",
-    "clothing_store",
-    "colloquium",
-    "convenience_store",
-    "courthouse",
-    "dentist",
-    "department_store",
-    "doctor",
-    "electrician",
-    "electronics_store",
-    "embassy",
-    "fire_station",
-    "florist",
-    "food",
-    "funeral_home",
-    "furniture_store",
-    "gas_station",
-    "gym",
-    "hair_care",
-    "hardware_store",
-    "health",
-    "hindu_temple",
-    "home_goods_store",
-    "hospital",
-    "insurance_agency",
-    "jewelry_store",
-    "laundry",
-    "lawyer",
-    "library",
-    "liquor_store",
-    "local_government_office",
-    "locksmith",
-    "lodging",
-    "meal_delivery",
-    "meal_takeaway",
-    "mosque",
-    "movie_rental",
-    "movie_theater",
-    "moving_company",
-    "museum",
-    "night_club",
-    "other",
-    "park",
-    "parking",
-    "pet_store",
-    "pharmacy",
-    "physiotherapist",
-    "plumber",
-    "police",
-    "post_office",
-    "primary_school",
-    "real_estate_agency",
-    "restaurant",
-    "roofing_contractor",
-    "school",
-    "secondary_school",
-    "shoe_store",
-    "shopping_mall",
-    "spa",
-    "stadium",
-    "storage",
-    "store",
-    "subway_station",
-    "supermarket",
-    "synagogue",
-    "taxi_stand",
-    "tourist_attraction",
-    "train_station",
-    "transit_station"
-        """
-
+        "accounting","airport","amusement_park","aquarium","art_gallery","atm","bakery","bank","bar","beauty_salon","bicycle_store","book_store","bowling_alley","bus_station","cafe","campground","car_dealer",
+    "car_rental","car_repair","car_wash","casino","cemetery","church","city_hall","clothing_store","colloquium","convenience_store","courthouse","dentist","department_store","doctor","electrician",
+    "electronics_store","embassy","fire_station","florist","food","funeral_home","furniture_store","gas_station","gym","hair_care","hardware_store","health","hindu_temple","home_goods_store","hospital",
+    "insurance_agency","jewelry_store","laundry","lawyer","library","liquor_store","local_government_office","locksmith","lodging","meal_delivery","meal_takeaway","mosque","movie_rental","movie_theater",
+    "moving_company","museum","night_club","other","park","parking","pet_store","pharmacy","physiotherapist","plumber","police","post_office","primary_school","real_estate_agency","restaurant",
+    "roofing_contractor","school","secondary_school","shoe_store","shopping_mall","spa","stadium","storage","store","subway_station","supermarket","synagogue","taxi_stand","tourist_attraction","train_station",
+    "transit_station"'''
+ 
         # Create the model instance
         model = genai.GenerativeModel("gemini-1.5-flash")
 
