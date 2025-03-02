@@ -1,0 +1,12 @@
+Flask
+Flask-Session
+pymongo
+requests
+google-generativeai
+googlemaps
+ibm-watson
+ibm-cloud-sdk-core
+python-dotenv
+opencv-python
+numpy
+pillow
