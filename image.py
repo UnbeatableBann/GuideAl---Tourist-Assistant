@@ -6,7 +6,7 @@ import wikipedia
 import base64
 
 
-MAPS_API_KEY = "AIzaSyBOoDCqCkmhXLzqGkXNzXir0oA1ullGG0w"
+MAPS_API_KEY = os.getenv("MAPS_API_KEY")
 
 
 def analyze_image(image_bytes):
