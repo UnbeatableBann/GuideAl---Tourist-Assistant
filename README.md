@@ -17,7 +17,7 @@ Hosting: IBM Cloud
 
 ## Installation
 1. Clone the Repository
-git clone https://github.com/your-username/GuideAI.git
+git clone https://github.com/UnbeatableBann/GuideAI.git
 cd GuideAI
 
 3. Create a Virtual Environment
@@ -41,11 +41,12 @@ Open http://127.0.0.1:5000/ in your browser.
 
 2. Multilingual Support
 ![Project Screenshot](Screenshots/Multilingual.png)
+![Project Screenshot](Screenshots/Multilingual2.png)
 
-3. Using image to get information
-![Project Screenshot](Screenshots/UploadImages.png)
+4. Using image to get information
+![Project Screenshot](Screenshots/ImageUpload.png)
 
-4. Trip Planning
+5. Trip Planning
 ![Project Screenshot](Screenshots/TripPlanning.png)
 
 ## Usage
